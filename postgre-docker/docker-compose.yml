@@ -46,6 +46,6 @@ services:
     working_dir: /app
     ports:
       - "${FRONTEND_LOCAL_PORT}:3000"
-    command: sh -c "rm .env && echo REACT_APP_API_PORT=${BACKEND_LOCAL_PORT} >> .env && npm run docker-start-dev"
+    command: sh -c "rm -f .env && echo REACT_APP_API_PORT=${BACKEND_LOCAL_PORT} >> .env && npm run docker-start-dev"
     depends_on:
       - node
